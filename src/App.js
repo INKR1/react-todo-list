@@ -8,7 +8,8 @@ import {
   query,
   onSnapshot,
   doc,
-  updateDoc
+  updateDoc,
+  deleteDoc
 } from "firebase/firestore";
 import { db } from "./data/firebase-config";
 
@@ -32,6 +33,10 @@ function App() {
     await updateDoc(doc(db, "todos", todo.id), { completed: !todo.completed });
   };
 
+  const deleteTodo = async (todo) => {
+    await deleteDoc(doc(db, "todos", todo.id));
+  }
+
   return (
     <div className="App">
       <div>
@@ -46,6 +51,7 @@ function App() {
             key={todo.id}
             todo={todo}
             toggleComplete={toggleComplete}
+            deleteTodo={deleteTodo}
           />
         ))}
       </div>

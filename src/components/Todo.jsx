@@ -4,7 +4,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 
-export default function Todo({ todo, toggleComplete, handleDelete, handleEdit,}) {
+export default function Todo({ todo, toggleComplete, deleteTodo, editTodo }) {
 
   const [newTitle, setNewTitle] = useState(todo.title);
 
@@ -37,7 +37,10 @@ export default function Todo({ todo, toggleComplete, handleDelete, handleEdit,})
         <button className="button-edit">
           <EditIcon id="i" />
         </button>
-        <button className="button-delete">
+        <button 
+        className="button-delete"
+        onClick={() => deleteTodo(todo)}
+        >
           <DeleteIcon id="i" />
         </button>
       </div>
