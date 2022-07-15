@@ -1,3 +1,44 @@
-/* .App {
- 
-} */
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+
+}
+
+:root {
+  --font-roboto: "Roboto Slab", serif;
+}
+
+body {
+  font-family: var(--font-roboto);
+  background-repeat: no-repeat;
+  background: linear-gradient(to left bottom, 
+  #ea73ec,
+  #ca73ec, 
+  #9b9fff, 
+  #00beff, 
+  #00d2ff,
+  #00dfe7, 
+  #2ee0df, 
+  #45e1d6, 
+  #57e1ce, 
+  #36dbe0, 
+  #27d3ee, 
+  #3dcaf8, 
+  #5fc0fb) 
+  fixed;
+}
+
+.App {
+  align-items: center;
+  justify-content: center;
+}
+
+.title h1 {
+  color: #3a3a3a;
+  text-align: center;
+  margin: 30px 0;
+  font-weight: 700;
+}
