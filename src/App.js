@@ -37,6 +37,10 @@ function App() {
     await deleteDoc(doc(db, "todos", todo.id));
   }
 
+  const editTodo = async (todo, title) => {
+    await updateDoc(doc(db, "todos", todo.id), { title: title });
+  }
+
   return (
     <div className="App">
       <div>
@@ -52,6 +56,7 @@ function App() {
             todo={todo}
             toggleComplete={toggleComplete}
             deleteTodo={deleteTodo}
+            editTodo={editTodo}
           />
         ))}
       </div>

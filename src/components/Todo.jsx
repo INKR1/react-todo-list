@@ -17,7 +17,6 @@ export default function Todo({ todo, toggleComplete, deleteTodo, editTodo }) {
       setNewTitle(e.target.value);
     }
   };
-  
   return (
     <div className="todo">
       <input
@@ -34,13 +33,13 @@ export default function Todo({ todo, toggleComplete, deleteTodo, editTodo }) {
         >
           <CheckCircleIcon id="i" />
         </button>
-        <button className="button-edit">
+        <button
+          className="button-edit"
+          onClick={() => editTodo(todo, newTitle)}
+        >
           <EditIcon id="i" />
         </button>
-        <button 
-        className="button-delete"
-        onClick={() => deleteTodo(todo)}
-        >
+        <button className="button-delete" onClick={() => deleteTodo(todo)}>
           <DeleteIcon id="i" />
         </button>
       </div>
